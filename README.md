@@ -16,7 +16,7 @@ As a loss function we use the mean squared error. The model has been trained usi
 
 ## Results of evaluation
 
-The usage and evaluation of the trained model are illustrated in the script `model_test.py`. To run this script, one has to install all requirements by, for instance, invoking the command: `pip install -r requirements.txt`. The squared correlation coefficient for the test set equals 0.73. Below is more information on the model performance on the train and test sets.
+The squared correlation coefficient for the test set equals 0.73. The example of usage and the evaluation of the trained model is implemented in the script `model_test.py`. To run this script, one has to install all requirements by, for instance, invoking the command: `pip install -r requirements.txt`. Below is more information on the model performance on the train and test sets.
 
 <img src="https://user-images.githubusercontent.com/4588093/72859688-d3ca9580-3d18-11ea-82eb-b5919efbe629.png" width="300">
 <img src="https://user-images.githubusercontent.com/4588093/72859689-d3ca9580-3d18-11ea-842b-394be8cf4991.png" width="300">
