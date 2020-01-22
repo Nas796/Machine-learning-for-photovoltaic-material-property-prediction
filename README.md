@@ -6,6 +6,8 @@ This repository contains a regression model based on the two-layer feedforward a
 
 ## Datasets
 
+This dataset was compiled from 350 small molecules and polymers as electron donors and acceptors, and includes experimental properties collected from literature and data from quantum chemical calculations.
+
 ## Model
 
 The neural network model consists of two fully-connected layers with ReLU activations and a regression head. The dimensionality of the layers is shown below:
