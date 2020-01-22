@@ -8,7 +8,7 @@ This repository contains a regression model based on the two-layer feedforward a
 
 ## Model
 
-The neural network model consists of two fully-connected layers with ReLU activations and a regression head. The dimensionality of layers are shown below:
+The neural network model consists of two fully-connected layers with ReLU activations and a regression head. The dimensionality of the layers is shown below:
 
 <img src="https://user-images.githubusercontent.com/4588093/72859687-d3ca9580-3d18-11ea-8f28-ff0e89d2940f.png" width="200">
 
