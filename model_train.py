@@ -90,6 +90,8 @@ def main():
                         validation_data=(x_test, y_test),
                         callbacks=[tensorboard_callback])
 
+    model.save('model.h5')
+
 
 if __name__ == '__main__':
 
