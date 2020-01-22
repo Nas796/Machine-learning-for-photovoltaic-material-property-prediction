@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository contains a regression model based on the two-layer feedforward artificial neural network for predicting the power conversion efficiency (PCE). This work demonstrates the possibility to train a neural network using descriptors for predicting photovoltaic properties. The further improvement of the performance can be achieved using different neural network regularization methods such as the bayesian regularization (see BRANN architecture).
+This repository contains a regression model based on the two-layer feedforward artificial neural network for predicting the power conversion efficiency (PCE). This work demonstrates the possibility to train a neural network using descriptors for predicting photovoltaic properties. The further improvement of the performance can be achieved using different neural network regularization methods such as a bayesian regularization (see BRANN architecture).
 
 ## Datasets
 
