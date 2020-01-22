@@ -1,3 +1,6 @@
+"""
+This script is for testing the trained model named model.h5.
+"""
 from tensorflow import keras
 from model_train import exel2numpy
 from model_train import correlation_coefficient
