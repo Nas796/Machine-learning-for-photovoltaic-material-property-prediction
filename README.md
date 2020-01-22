@@ -12,9 +12,11 @@ The model consists of two fully-connected layers with RELU activations and a reg
 
 <img src="https://user-images.githubusercontent.com/4588093/72859687-d3ca9580-3d18-11ea-8f28-ff0e89d2940f.png" width="148">
 
+The model has been develpoed using Keras API implemented in Tensorflow.
+
 ## Results of evaluation
 
-The squared correlation coeficient for the test set equals 0.72. Below is more information on the model performance on the train and test sets.
+The squared correlation coeficient for the test set equals 0.73. Below is more information on the model performance on the train and test sets.
 
 <img src="https://user-images.githubusercontent.com/4588093/72859688-d3ca9580-3d18-11ea-82eb-b5919efbe629.png" width="248">
 <img src="https://user-images.githubusercontent.com/4588093/72859689-d3ca9580-3d18-11ea-842b-394be8cf4991.png" width="248">
