@@ -93,10 +93,10 @@ tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram
 
 history = model.fit(x_train, y_train,
                     batch_size=64,
-                    epochs=4000,
+                    epochs=100,
                     validation_data=(x_test, y_test),
                     callbacks=[tensorboard_callback])
 
-test_scores = model.evaluate(x_test, y_test, verbose=2)
-print('Test loss:', test_scores[0])
-print('Test accuracy:', test_scores[1])
+# test_scores = model.evaluate(x_test, y_test, verbose=2)
+# print('Test loss:', test_scores[0])
+# print('Test :', test_scores[1])
