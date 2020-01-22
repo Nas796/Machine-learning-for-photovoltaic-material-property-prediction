@@ -20,10 +20,21 @@ The squared correlation coefficient for the test set equals 0.73. The example of
 
 Below is more information on the model performance on the train and test sets.
 
+
+<div class="row">
+  <div class="col-md-8" markdown="1">
 <img src="https://user-images.githubusercontent.com/4588093/72859688-d3ca9580-3d18-11ea-82eb-b5919efbe629.png" width="300">
 <img src="https://user-images.githubusercontent.com/4588093/72859689-d3ca9580-3d18-11ea-842b-394be8cf4991.png" width="300">
+  </div>
+  <div class="col-md-4" markdown="1">
 <img src="https://user-images.githubusercontent.com/4588093/72859690-d4632c00-3d18-11ea-8d4c-99465d844cc6.png" width="300">
 <img src="https://user-images.githubusercontent.com/4588093/72859692-d4632c00-3d18-11ea-8490-a994d2a68315.png" width="300">
+  <img height="600px" class="center-block" src="../img/folder/blah.jpg">
+  </div>
+</div>
+
+
+
 
 ## License
 
