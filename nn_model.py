@@ -1,12 +1,13 @@
 import datetime
 import numpy as np
+import pandas as pd
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
-import pandas as pd
-from tensorflow.keras import regularizers
 from tensorflow.keras import backend as K
 
+
+# a set of auxiliary functions to read dataset
 
 def exel2dict(filename):
     xls = pd.ExcelFile(filename)
@@ -38,6 +39,8 @@ def exel2numpy(filename):
     return np.array(data_x).T, np.array(data_y).T
 
 
+# function computing metric based on the squared correlation coefficient
+
 def correlation_coefficient(y_true, y_pred):
     x = y_true
     y = y_pred
@@ -52,51 +55,42 @@ def correlation_coefficient(y_true, y_pred):
     return K.square(r)
 
 
-inputs = keras.Input(shape=(632,), name='img')
-x = layers.Dense(64, activation='relu', kernel_initializer='normal',
-                 kernel_regularizer=regularizers.l2(0.002),
-                 activity_regularizer=regularizers.l1(0.002))(inputs)
-# x = layers.Dense(16, activation='relu', kernel_initializer='normal')(x)
-x = layers.Dense(8, activation='relu', kernel_initializer='normal')(x)
-outputs = layers.Dense(1, kernel_initializer='normal')(x)
+def main():
 
-model = keras.Model(inputs=inputs, outputs=outputs, name='model')
-model.summary()
-keras.utils.plot_model(model, 'my_first_model.png', show_shapes=True)
+    # define model architecture
 
-# load dataset
+    inputs = keras.Input(shape=(632,), name='img')
+    x = layers.Dense(32, activation='relu', kernel_initializer='normal')(inputs)
+    x = layers.Dense(4, activation='relu', kernel_initializer='normal')(x)
+    outputs = layers.Dense(1, kernel_initializer='normal')(x)
 
-train = exel2dict('train.xlsx')
-test = exel2dict('test.xlsx')
+    model = keras.Model(inputs=inputs, outputs=outputs, name='model')
+    model.summary()
+    keras.utils.plot_model(model, 'my_first_model.png', show_shapes=True)
 
-x_train, y_train = exel2numpy('train.xlsx')
-x_test, y_test = exel2numpy('test.xlsx')
+    # load dataset
 
-# norm = np.max(x_train)
-# x_train = x_train.astype('float32') / norm
-# x_test = x_test.astype('float32') / norm
+    x_train, y_train = exel2numpy('train.xlsx')
+    x_test, y_test = exel2numpy('test.xlsx')
 
-# (x_train, y_train), (x_test, y_test) = keras.datasets.mnist.load_data()
-# x_train = x_train.reshape(60000, 784).astype('float32') / 255
-# x_test = x_test.reshape(10000, 784).astype('float32') / 255
+    # initialize the model
 
-# model.compile(loss='mean_squared_error',
-#               optimizer=keras.optimizers.Adam(),
-#               metrics=[tf.keras.metrics.MeanSquaredError()])
+    model.compile(loss='mean_squared_error',
+                  optimizer=keras.optimizers.Adam(),
+                  metrics=[correlation_coefficient])
 
-model.compile(loss='mean_squared_error',
-              optimizer=keras.optimizers.Adam(),
-              metrics=[correlation_coefficient])
+    log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
 
-log_dir="logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
+    # train and evaluate the model
 
-history = model.fit(x_train, y_train,
-                    batch_size=64,
-                    epochs=100,
-                    validation_data=(x_test, y_test),
-                    callbacks=[tensorboard_callback])
+    history = model.fit(x_train, y_train,
+                        batch_size=64,
+                        epochs=100,
+                        validation_data=(x_test, y_test),
+                        callbacks=[tensorboard_callback])
 
-# test_scores = model.evaluate(x_test, y_test, verbose=2)
-# print('Test loss:', test_scores[0])
-# print('Test :', test_scores[1])
+
+if __name__ == '__main__':
+
+    main()
