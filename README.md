@@ -8,7 +8,7 @@ This repository contains a regression model based on the two-layer feedforward a
 
 ## Model
 
-The model consists of two fully-connected layers with ReLU activations and a regression head. As a loss function we use the mean squared error. The model has been trained using Adam optimizer.
+The neural network model consists of two fully-connected layers with ReLU activations and a regression head. As a loss function we use the mean squared error. The model has been trained using Adam optimizer.
 
 <img src="https://user-images.githubusercontent.com/4588093/72859687-d3ca9580-3d18-11ea-8f28-ff0e89d2940f.png" width="200">
 
