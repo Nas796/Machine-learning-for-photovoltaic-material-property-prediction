@@ -6,7 +6,7 @@ This repository contains a regression model based on the two-layer feedforward a
 
 ## Datasets
 
-This dataset was compiled from 350 small molecules and polymers as electron donors and acceptors, and includes experimental properties collected from literature and data from quantum chemical calculations.
+This dataset (Harvard Photovoltaic Dataset) was compiled from 244 small molecules and polymers as electron donors and acceptors, and includes experimental properties collected from literature and data from quantum chemical calculations as well as Scharber model. The dataset was devided to a training set (80%) and a test set (20%). The values of PCE in this dataset was calculated by Sharber model. 
 
 ## Model
 
